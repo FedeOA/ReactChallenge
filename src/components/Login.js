@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import swal from 'sweetalert';
 
 function Login(){
 
@@ -13,18 +14,18 @@ function Login(){
         
         if(username===''|| password===''){
             
-            console.log("los campos no pueden estar vacios");
+            swal("los campos no pueden estar vacios","", "error")
             return;
         }
 
         if (username !== '' &&  !regexEmail.test(username)){
 
-            console.log("Debe escribir una direccion de correo electronico valida")
+            swal("Ingrese un correo valido","example@gmail.com", "error")
             return;
         }
 
         if (username !== 'challenge@alkemy.org'||password!=='react'){
-            console.log("credenciales invalidas");
+            swal("credenciales invalidas","", "warning")
             return;
         }
         
@@ -32,6 +33,7 @@ function Login(){
         axios
         .post('http://localhost:8080/auth/login',{ username, password })
         .then(res=>{
+            swal("Perfecto. Ingresaste con éxito","","success")
             console.log(res.data);
         })
        

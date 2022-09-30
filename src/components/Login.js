@@ -1,8 +1,11 @@
 import axios from "axios";
 import React from "react";
 import swal from 'sweetalert';
+import {useNavigate} from 'react-router-dom';
 
 function Login(){
+
+    const history = useNavigate();
 
     const submitHandler = e =>{
        
@@ -30,11 +33,14 @@ function Login(){
         }
         
         console.log("Ok. Estamos listos para enviar la informacion");
+       
         axios
         .post('http://localhost:8080/auth/login',{ username, password })
         .then(res=>{
             swal("Perfecto. Ingresaste con éxito","","success")
-            console.log(res.data);
+            const tokenRecibido=res.data.token;
+            localStorage.setItem('token',tokenRecibido);
+            history("/news");
         })
        
     }

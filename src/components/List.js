@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import { Container} from 'react-bootstrap';
 import {useState , useEffect} from "react";
 import axios from 'axios';
-
+import {Link} from 'react-router-dom'
 
 function List(){
 
@@ -46,9 +46,7 @@ function List(){
                                     <Card.Img variant="top" src="https://cohorte-agosto-38d749a7.s3.amazonaws.com/1661519321851-LOGO-SOMOS_MAS.png" />
                                     <Card.Body>
                                         <Card.Title>{oneNew.name}</Card.Title>
-                                        <Card.Text>
-                                        {oneNew.image}
-                                        </Card.Text>
+                                        <Link to={`/detalle?newId=${oneNew.id}`} className="btn btn-primary">Detail</Link>
                                     </Card.Body>
                                     </Card>
                                 </Col>

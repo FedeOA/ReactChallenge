@@ -1,0 +1,17 @@
+.img {
+    display: block!important;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    width: 25% !important;
+    background-color: rgb(108, 102, 153)!important;
+    color: rgb(255,255,204)!important;
+
+  }
+
+.text {
+    min-height: 100px!important;
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
+    
+  }

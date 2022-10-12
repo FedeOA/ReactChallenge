@@ -36,11 +36,11 @@ return(
 <>
 
         
-        <div >
-            <h1 className="text">{newData.name}</h1>
+        <div style={{position:"relative", top:"1em", left:"-30em"}}>
+            <h1 className="text">{newData.name} </h1>
           <img className="img" src="https://cohorte-agosto-38d749a7.s3.amazonaws.com/1661519321851-LOGO-SOMOS_MAS.png"></img>
           <Container>
-          <h3 className='text'>{newData.content}</h3>
+          <h3 className='text' style={{position:"relative", top:"-13em", left:"10em",fontFamily:"Arial"}}>{newData.content}</h3>
           </Container>
         </div>      
    

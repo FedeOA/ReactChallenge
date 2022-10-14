@@ -51,33 +51,39 @@ function Login(){
         let token=localStorage.getItem('token');
         
         return (
-            <>
-                {token && <Navigate to ="/news"/>}
             
-             <Container>
-                <h1 className="shadow-sm text-success mt-5 p-3 text-center rounded">Admin Login</h1>
-                <Row className="mt-5">
-                    <Col lg={5} md={6} sm={12} className="p-5 m-auto shadow-sm rounded-lg">
-                        <Form onSubmit={submitHandler}>
+            <div  style={{backgroundImage:`url("https://cohorte-agosto-38d749a7.s3.amazonaws.com/1661519321851-LOGO-SOMOS_MAS.png")`}}>
+                {token && <Navigate to ="/news"/>}
+        
+             <Container >
+             <br></br><br></br><br></br><br></br><br></br>
+                <Row className="mt-5" >
+                    
+                    <Col lg={5} md={6} sm={12} className="p-5 m-auto shadow-sm rounded-lg" style={{backgroundColor:"#8a4379",borderRadius:"15px",borderColor:"black",width:"400px",height:"350px"}}>
+                        <Form onSubmit={submitHandler} >
                             <Form.Group controlId="formBasicEmail">
-                                <Form.Label>Email address</Form.Label>
+                                <Form.Label><h5>Email address</h5></Form.Label>
                                 <Form.Control type="email" placeholder="Enter email" name="username"/>
                             </Form.Group>
+                            <br></br><br></br>
 
                             <Form.Group controlId="formBasicPassword">
-                                <Form.Label>Password</Form.Label>
+                                <Form.Label><h5>Password</h5></Form.Label>
                                 <Form.Control type="password" placeholder="Password" name="password" />
                             </Form.Group>
-
+                            <br></br>
                             <Button variant="success btn-block" type="submit">
                                 Login
                             </Button>
                         </Form>
                     </Col>
+                    
                 </Row>
-                <h6 className="mt-5 p-5 text-center text-secondary ">Copyright © 2021 Masud Rana. All Rights Reserved.</h6>
+                <h6 className="mt-5 p-5 text-center text-secondary " >Copyright © 2022 Somos mas All. Rights Reserved.</h6>
             </Container>
-        </>
+            </div>
+        
+
     );
 };
 export default Login;
